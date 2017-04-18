@@ -7,60 +7,20 @@
     tools:context="com.test.icicidemo.Home">
 
 
-    <android.support.design.widget.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/username"
-        android:layout_marginTop="40dp"
-        android:layout_marginLeft="25dp"
-        android:layout_marginRight="25dp"
-        >
-        <EditText
-            android:drawablePadding="5dp"
-            android:layout_marginTop="10dp"
-            android:ems="10"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Enter username" />
-    </android.support.design.widget.TextInputLayout>
-
-    <android.support.design.widget.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/access_code"
-        android:layout_below="@+id/username"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="25dp"
-        android:layout_marginRight="25dp"
-        >
-        <EditText
-
-            android:drawablePadding="5dp"
-            android:layout_marginTop="10dp"
-            android:ems="10"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Enter access code" />
-    </android.support.design.widget.TextInputLayout>
-
     <Button
-        android:layout_marginTop="40dp"
-         android:layout_below="@id/access_code"
+        android:id="@+id/atm_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/login"
-        android:text="Login"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="ATM Login" />
 
-        />
-
-<Button
-    android:layout_marginTop="20dp"
-    android:layout_below="@id/login"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:id="@+id/atm_login"
-    android:text="ATM Login"
-    android:layout_centerHorizontal="true"
-    />
+    <Button
+        android:id="@+id/atm_logout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/atm_login"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="ATM Logout" />
 </RelativeLayout>

@@ -27,15 +27,14 @@ public class Home extends AppCompatActivity implements VolleyInterface {
                 startActivityForResult(new Intent(Home.this,SimpleScannerActivity.class),1);
             }
         });
-        findViewById(R.id.login).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.atm_logout).setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                String user = ((TextInputLayout)findViewById(R.id.username)).getEditText().getText().toString();
-                String access = ((TextInputLayout)findViewById(R.id.access_code)).getEditText().getText().toString();
+            public void onClick(View v) {
                 HashMap<String,String> hashMap=new HashMap<>();
-                hashMap.put("username",user);
-                hashMap.put("accesscode",access);
-                VolleyHelper.postRequestVolley(Home.this,Home.this,"https://www.qrcodeatm.tk/api/api.php",hashMap,7,false);
+                hashMap.put("token",token);
+                hashMap.put("type","check");
+                VolleyHelper.postRequestVolley(Home.this,"http://icicidemo.16mb.com/get.php",hashMap,4,false);
+
             }
         });
     }
@@ -74,24 +73,16 @@ public class Home extends AppCompatActivity implements VolleyInterface {
         } catch (JSONException e) {
             Toast.makeText(this,"Invalid",Toast.LENGTH_SHORT).show();
         }
+    }else if(requestCode==4){
+        Log.d("response",response);
+        try {
+            JSONObject jsonObject=new JSONObject(response);
+
+        } catch (JSONException e) {
+            Toast.makeText(this,"Invalid",Toast.LENGTH_SHORT).show();
+        }
     }
 
-        if(requestCode==7)
-        {
-            Log.d("response",response);
-            if(response.equals("Success"))
-            {
-                startActivityForResult(new Intent(this,SimpleScannerActivity.class),1);
-            }
-            else if(response.equals("Invalid Details"))
-            {
-              Toast.makeText(this,"Invalid Details",Toast.LENGTH_SHORT).show();
-            }
-            else  if(response.equals("Account created"))
-            {
-                Toast.makeText(this,"Account created",Toast.LENGTH_SHORT).show();
-            }
-        }
 
     }
 
