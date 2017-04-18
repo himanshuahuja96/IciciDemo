@@ -43,7 +43,8 @@ public class Login extends AppCompatActivity implements VolleyInterface {
             Log.d("response",response);
             if(response.equals("Success"))
             {
-                startActivityForResult(new Intent(this,SimpleScannerActivity.class),1);
+
+                startActivity(new Intent(this,Home.class));
             }
             else if(response.equals("Invalid Details"))
             {
