@@ -18,7 +18,17 @@ public class Login extends AppCompatActivity implements VolleyInterface {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
+        findViewById(R.id.login).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String user = ((TextInputLayout)findViewById(R.id.username)).getEditText().getText().toString();
+                String access = ((TextInputLayout)findViewById(R.id.access_code)).getEditText().getText().toString();
+                HashMap<String,String> hashMap=new HashMap<>();
+                hashMap.put("username",user);
+                hashMap.put("accesscode",access);
+                VolleyHelper.postRequestVolley(Login.this,"https://www.qrcodeatm.tk/api/api.php",hashMap,7,false);
+            }
+        });
     }
 
     @Override

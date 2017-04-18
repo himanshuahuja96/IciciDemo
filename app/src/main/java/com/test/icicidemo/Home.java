@@ -32,8 +32,8 @@ public class Home extends AppCompatActivity implements VolleyInterface {
             public void onClick(View v) {
                 HashMap<String,String> hashMap=new HashMap<>();
                 hashMap.put("token",token);
-                hashMap.put("type","check");
-                VolleyHelper.postRequestVolley(Home.this,"http://icicidemo.16mb.com/get.php",hashMap,4,false);
+                hashMap.put("type","logout");
+                VolleyHelper.postRequestVolley(Home.this,"http://qrcodeatm.tk/get.php",hashMap,4,false);
 
             }
         });
@@ -47,7 +47,7 @@ public class Home extends AppCompatActivity implements VolleyInterface {
             HashMap<String,String> hashMap=new HashMap<>();
             hashMap.put("token",token);
             hashMap.put("type","check");
-            VolleyHelper.postRequestVolley(this,this,"http://icicidemo.16mb.com/get.php",hashMap,1,false);
+            VolleyHelper.postRequestVolley(this,this,"http://qrcodeatm.tk/get.php",hashMap,1,false);
         }
     }
 
@@ -68,7 +68,7 @@ public class Home extends AppCompatActivity implements VolleyInterface {
                 hashMap.put("type","update");
                 hashMap.put("iciciuserid","arpit");
                 hashMap.put("acc_rej","0");
-                VolleyHelper.postRequestVolley(this,this,"http://icicidemo.16mb.com/get.php",hashMap,1,false);
+                VolleyHelper.postRequestVolley(this,this,"http://qrcodeatm.tk/get.php",hashMap,1,false);
             }
         } catch (JSONException e) {
             Toast.makeText(this,"Invalid",Toast.LENGTH_SHORT).show();
