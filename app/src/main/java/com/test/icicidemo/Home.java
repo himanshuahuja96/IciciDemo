@@ -33,7 +33,7 @@ public class Home extends AppCompatActivity implements VolleyInterface {
                 HashMap<String,String> hashMap=new HashMap<>();
                 hashMap.put("token",token);
                 hashMap.put("type","logout");
-                VolleyHelper.postRequestVolley(Home.this,"http://qrcodeatm.tk/api/get.php",hashMap,4,false);
+                VolleyHelper.postRequestVolley(Home.this,"https://qrcodeatm.tk/api/get.php",hashMap,4,false);
 
             }
         });
